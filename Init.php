@@ -12,16 +12,19 @@
 namespace FacturaScripts\Plugins\OftalmolFile;
 
 use FacturaScripts\Core\Base\InitClass;
-use FacturaScripts\Plugins\Oftalmol\Model;
 
 class Init extends InitClass {
 
     #[\Override]
-    public function init(): void {/*
-        $this->loadExtension(new Extension\Controller\EditExpedient());
-        $this->loadExtension(new Extension\Controller\EditTestRefraction());
-        $this->loadExtension(new Extension\Controller\EditTestTearDuct());
-        //$this->createModels();*/
+    public function init(): void {
+        $this->loadExtension(new Extension\Model\OCTMacule());
+        $this->loadExtension(new Extension\Model\OCTPapille());
+        $this->loadExtension(new Extension\Model\Angiography());
+        $this->loadExtension(new Extension\Model\Campimetry());
+        $this->loadExtension(new Extension\Model\Topography());
+        $this->loadExtension(new Extension\Model\EndothelialCount());
+        $this->loadExtension(new Extension\Model\Biometry());
+        $this->loadExtension(new Extension\Model\Retinography());
     }
 
     #[\Override]
@@ -31,8 +34,5 @@ class Init extends InitClass {
 
     #[\Override]
     public function update(): void {
-        $this->loadExtension(new Extension\Controller\EditExpedient());
-        //$this->createModels();
-        //AddWidget::addWidget('filesattached', 'FacturaScripts\\Plugins\\TuPlugin\\Widget\\FilesAttachedWidget');
     }
 }
