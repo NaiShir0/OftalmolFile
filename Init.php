@@ -9,7 +9,7 @@
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
 
-namespace FacturaScripts\Plugins\OftalmolMYAH;
+namespace FacturaScripts\Plugins\OftalmolFile;
 
 use FacturaScripts\Core\Base\InitClass;
 use FacturaScripts\Plugins\Oftalmol\Model;
@@ -17,11 +17,11 @@ use FacturaScripts\Plugins\Oftalmol\Model;
 class Init extends InitClass {
 
     #[\Override]
-    public function init(): void {
+    public function init(): void {/*
         $this->loadExtension(new Extension\Controller\EditExpedient());
         $this->loadExtension(new Extension\Controller\EditTestRefraction());
         $this->loadExtension(new Extension\Controller\EditTestTearDuct());
-        //$this->createModels();
+        //$this->createModels();*/
     }
 
     #[\Override]
