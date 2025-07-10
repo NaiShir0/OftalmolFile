@@ -152,13 +152,15 @@ class WidgetFilesAttached extends WidgetText {
                 . '</div>';
     }
 
-    public function files(int $idTestRecord = 0, string $query = '', int $idExpedient = 0, int $idPatient = 0, string $sort = 'date-desc'): array {
+    public function files(int $idTestRecord = 0, string $query = '', int $idExpedient = 0, int $idPatient = 0, string $sort = 'date-desc', int $idTestType = 0): array {
         $list = [];
         $where = [];
+
         // Filtrar por idTestRecord
         if ($idTestRecord > 0) {
             $where[] = new DataBaseWhere('idTestRecord', $idTestRecord);
         }
+
         // Filtrar por expediente
         if ($idExpedient > 0) {
             $where[] = new DataBaseWhere('idExpedient', $idExpedient);
@@ -169,6 +171,11 @@ class WidgetFilesAttached extends WidgetText {
             $where[] = new DataBaseWhere('idPatient', $idPatient);
         }
 
+        // Filtrar por tipo de prueba
+        if ($idTestType > 0) {
+            $where[] = new DataBaseWhere('idTestType', $idTestType);
+        }
+
         // Filtro por texto (en nombre de archivo o notas)
         if (!empty($query)) {
             $where[] = new DataBaseWhere('fileName|generalNote|profesionalNote', '%' . $query . '%', 'LIKE');
@@ -176,9 +183,7 @@ class WidgetFilesAttached extends WidgetText {
 
         // Buscar archivos relacionados
         $linksModel = new FileAttachmentLink();
-        //var_dump($where);
         foreach ($linksModel->all($where) as $link) {
-            //Tools::log()->warning("a: ".print_r($link));
             $file = new FileAttachment();
             if ($file->loadFromCode($link->idFile)) {
                 $list[] = $file;

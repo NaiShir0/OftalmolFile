@@ -17,32 +17,33 @@ use Closure;
 
 class OCTPapille {
 
-    public function save(): Closure {
+      public function save(): Closure {
         return function () {
-            if (!empty($this->file)) {
-                $file = new Model\FileAttachment();
+            $saved = false;
 
-                $expedient = new Model\Expedient();
-                $expedient->loadFromCode($this->idExpedient);
-
-                $patient = new Model\Patient();
-                $patient->loadFromCode($expedient->idPatient);
-
-                $file->fileName = src\Utils::generateFileName($patient->patientName, $this->creationDate, $this->getTestName());
-                $file->filePath = $this->file;
-                $file->fileType = "pdf";
-
-                // PASAMOS LOS DATOS AL MODELO para que se cree el link automáticamente
-                $file->idExpedient = $this->idExpedient;
-                $file->idPatient = $patient->idPatient;
-                //$file->idtestType = $this->tableName();
-                $file->idTestRecord = $this->id;
-
-
-                return $file->save();
+            if (!empty($this->ODfile)) {
+                $saved = src\Utils::saveFile(
+                                filePath: $this->ODfile,
+                                idExpedient: $this->idExpedient,
+                                idTestype: $this->idTestType,
+                                idTestRecord: $this->id,
+                                creationDate: $this->creationDate,
+                                testName: $this->getTestName() . ' OD'
+                        ) || $saved;
             }
 
-            return true;
+            if (!empty($this->OSfile)) {
+                $saved = src\Utils::saveFile(
+                                filePath: $this->OSfile,
+                                idExpedient: $this->idExpedient,
+                                idTestype: $this->idTestType,
+                                idTestRecord: $this->id,
+                                creationDate: $this->creationDate,
+                                testName: $this->getTestName() . ' OS'
+                        ) || $saved;
+            }
+
+            return $saved;
         };
     }
 }
