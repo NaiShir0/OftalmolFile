@@ -9,7 +9,7 @@
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
 
-namespace FacturaScripts\Plugins\OftalmolFile\Extension\Controller;
+namespace FacturaScripts\Plugins\OftalmolFile\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
@@ -20,13 +20,28 @@ use FacturaScripts\Plugins\Oftalmol\src\Constants;
  * @author Clinica Castillo <info@clinicastillo.es>
  * @author Jose Antonio Cuello Principal <yopli2000@gmail.com>
  */
-class ListAdministration {
+class ListFileAttachment extends ListController {
 
-    use Closure;
+    /**
+     * Return the basic data for this page.
+     *
+     * @return array
+     */
+    #[\Override]
+    public function getPageData(): array {
+        $data = parent::getPageData();
+        $data['menu'] = 'ophthalmologyAdmin';
+        $data['title'] = 'ophthalmol-file-list';
+        $data['icon'] = 'fa-solid fa-file';
+        return $data;
+    }
 
-    public function createViews(): Closure {
-        return function (string $viewName = Constants::VIEW_LIST_FILEATTACHMENT) {
-            $this->addView($viewName, 'FileAttachment', 'fileAttachment');
-        };
+    /**
+     * Inserts the views or tabs to display.
+     */
+    #[\Override]
+    protected function createViews() {
+        
+        $this->addView(Constants::VIEW_LIST_FILEATTACHMENT, 'FileAttachment', 'fileAttachment');
     }
 }
