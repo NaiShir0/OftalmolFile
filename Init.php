@@ -17,14 +17,11 @@ class Init extends InitClass {
 
     #[\Override]
     public function init(): void {
-        $this->loadExtension(new Extension\Model\OCTMacule());
-        $this->loadExtension(new Extension\Model\OCTPapille());
-        $this->loadExtension(new Extension\Model\Angiography());
-        $this->loadExtension(new Extension\Model\Campimetry());
-        $this->loadExtension(new Extension\Model\Topography());
-        $this->loadExtension(new Extension\Model\EndothelialCount());
-        $this->loadExtension(new Extension\Model\Biometry());
-        $this->loadExtension(new Extension\Model\Retinography());
+        
+        $this->loadExtension(new Extension\Controller\EditPatient());
+        
+        $this->loadModelExtensions();
+        
     }
 
     #[\Override]
@@ -34,5 +31,15 @@ class Init extends InitClass {
 
     #[\Override]
     public function update(): void {
+    }
+    private function loadModelExtensions() {
+        $this->loadExtension(new Extension\Model\OCTMacule());
+        $this->loadExtension(new Extension\Model\OCTPapille());
+        $this->loadExtension(new Extension\Model\Angiography());
+        $this->loadExtension(new Extension\Model\Campimetry());
+        $this->loadExtension(new Extension\Model\Topography());
+        $this->loadExtension(new Extension\Model\EndothelialCount());
+        $this->loadExtension(new Extension\Model\Biometry());
+        $this->loadExtension(new Extension\Model\Retinography());
     }
 }

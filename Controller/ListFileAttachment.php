@@ -12,7 +12,7 @@
 namespace FacturaScripts\Plugins\OftalmolFile\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
-use FacturaScripts\Plugins\Oftalmol\src\Constants;
+use FacturaScripts\Plugins\OftalmolFile\src\Constants;
 
 /**
  * Master table set.
@@ -41,7 +41,6 @@ class ListFileAttachment extends ListController {
      */
     #[\Override]
     protected function createViews() {
-        
         $this->addView(Constants::VIEW_LIST_FILEATTACHMENT, 'FileAttachment', 'fileAttachment');
     }
 }
