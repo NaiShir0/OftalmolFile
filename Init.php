@@ -17,11 +17,13 @@ class Init extends InitClass {
 
     #[\Override]
     public function init(): void {
-        
+
+        $this->loadExtension(new Extension\Controller\EditExpedient());
         $this->loadExtension(new Extension\Controller\EditPatient());
-        
+        $this->loadExtension(new Extension\Controller\ListAdministration());
+        $this->loadExtension(new Extension\Controller\EditFileAttachment());
+
         $this->loadModelExtensions();
-        
     }
 
     #[\Override]
@@ -31,7 +33,9 @@ class Init extends InitClass {
 
     #[\Override]
     public function update(): void {
+        
     }
+
     private function loadModelExtensions() {
         $this->loadExtension(new Extension\Model\OCTMacule());
         $this->loadExtension(new Extension\Model\OCTPapille());

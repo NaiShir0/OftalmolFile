@@ -51,4 +51,25 @@ class Utils {
 
         return $file->save();
     }
+
+    /**
+     * Obtiene el nombre de la prueba de la tabla oft_tests basado en idTestType.
+     * @return string El nombre de la prueba o una cadena vacía si no se encuentra.
+     */
+    public function getTestName(): string {
+        // Usa DbQuery para buscar en la tabla 'oft_tests'
+        // Filtra por la columna 'testType' usando el valor de $this->idTestType
+        $testData = DbQuery::table('oft_tests') // Asegúrate que el nombre de la tabla sea 'oft_tests'
+                ->whereEq('testType', $this->idTestType)
+                ->first();
+
+        if ($testData) {
+            // Si se encontró el registro, extrae el valor de la columna 'testName'
+            return $testData['testName'];
+        }
+
+        // Opcional: registrar una advertencia si no se encontró la prueba
+        Tools::log()->warning('No se encontró el tipo de prueba con idTestType: ' . $this->idTestType);
+        return ''; // Retorna una cadena vacía si no se encuentra
+    }
 }

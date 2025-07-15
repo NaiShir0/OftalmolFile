@@ -10,5 +10,9 @@
     "ophthalmol-file-list": "Archivos Oftalmológicos",    
     "left-eye-file": "Archivos Ojo Izquierdo",    
     "right-eye-file": "Archivos Ojo Derecho",
-    "file-list": ""    
+    "file-list": "",
+    
+    "type-file-name":"Nombre del tipo de archivo",
+    "":"",
+    "":""
 }
