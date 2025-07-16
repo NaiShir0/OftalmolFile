@@ -22,15 +22,15 @@ class AjaxDeleteFileAttachment extends Controller {
         $id = (int) $this->request->get('id');
 
         if ($action === 'delete') {
-            $link = new \FacturaScripts\Plugins\Oftalmol\Model\FileAttachmentLink();
-            if ($link->loadFromCode($id)) {
-                if ($link->delete()) {
+            $file = new \FacturaScripts\Plugins\Oftalmol\Model\FileAttachment();
+            if ($file->loadFromCode($id)) {
+                if ($file->delete()) {
                     echo json_encode(['success' => true]);
                 } else {
                     echo json_encode(['success' => false, 'message' => 'No se pudo eliminar.']);
                 }
             } else {
-                echo json_encode(['success' => false, 'message' => 'Archivo no encontrado.']);
+                echo json_encode(['success' => false, 'message' => 'Archivo no encontrado con id: ' . $id . '.']);
             }
 
             exit;
