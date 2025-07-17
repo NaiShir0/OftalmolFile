@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of Oftalmologia plugin for FacturaScripts.
  * FacturaScripts Copyright (C) 2015-2025 Carlos Garcia Gomez <carlos@facturascripts.com>
@@ -7,6 +8,7 @@
  *
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
+
 namespace FacturaScripts\Plugins\OftalmolFile\src;
 
 class Constants {
@@ -15,5 +17,7 @@ class Constants {
     const VIEW_LIST_FILEATTACHMENT = 'ListFileAttachment';
     const VIEW_EDIT_FILEATTACHMENT = 'EditFileAttachment';
     const VIEW_EDIT_FILEATTACHMENTLINK = 'EditFileAttachmentLink';
-     
+    
+    const VIEW_LIST_FILETYPE = 'ListFileType';
+    const VIEW_EDIT_FILETYPE = 'EditFileType';
 }
