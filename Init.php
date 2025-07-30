@@ -18,7 +18,6 @@ class Init extends InitClass {
     #[\Override]
     public function init(): void {
 
-        $this->loadExtension(new Extension\Controller\EditExpedient());
         $this->loadExtension(new Extension\Controller\EditPatient());
         $this->loadExtension(new Extension\Controller\ListAdministration());
         $this->loadExtension(new Extension\Controller\EditFileAttachment());

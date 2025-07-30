@@ -13,42 +13,12 @@ namespace FacturaScripts\Plugins\OftalmolFile\Extension\Controller;
 
 use FacturaScripts\Plugins\OftalmolFile\src\Constants;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
-use FacturaScripts\Plugins\OftalmolFile\Model\FileType; // ¡IMPORTANTE: Importa tu nuevo modelo!
+use FacturaScripts\Plugins\Oftalmol\Model\FileType; // ¡IMPORTANTE: Importa tu nuevo modelo!
 use Closure;
 
 class EditFileAttachment {
 
-    public function createViews(): Closure {
-
-        return function (string $viewName = Constants::VIEW_EDIT_FILEATTACHMENT) {
-
-            $column = $this->views[$viewName]->columnForName('fileTypeName');
-            if ($column && $column->widget->getType() === 'select') {
-
-                $fileTypesOptions = [];
-
-                // Obtenemos todos los registros de la tabla oft_filetypes
-                // Recuerda que Tools::getAll() devuelve objetos, no arrays asociativos.
-                $results = FileType::all();
-
-                // Recorremos los resultados para formatearlos como el select espera
-                foreach ($results as $row) {
-                    // El 'value' será el ID del tipo de archivo y el 'title' será el typeName
-                    $fileTypesOptions[] = [
-                        'value' => $row->id, // Asumo que 'id' es la clave primaria de oft_filetypes
-                        'title' => $row->typeName, // Este es el campo que quieres mostrar
-                    ];
-                }
-                $column->widget->values = [];
-                $column->widget->setValuesFromArray($fileTypesOptions);
-
-                // Opcional: Si quieres añadir una opción inicial como "Seleccionar tipo...", puedes usar array_unshift
-                // array_unshift($fileTypesOptions, ['value' => '', 'title' => '--- Seleccionar Tipo ---']);
-                // $column->widget->setValuesFromArray($fileTypesOptions);
-            }
-        };
-    }
-
+    
     public function loadData(): Closure {
         return function ($viewName, $view) {
             $mainViewName = $this->getMainViewName();
