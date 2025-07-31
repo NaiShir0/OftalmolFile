@@ -17,7 +17,7 @@ class EndothelialCount {
 
      public function save(): Closure {
         return function () {
-            $saved = false;
+            $saved = true;
 
             if (!empty($this->ODfile)) {
                 $saved = src\Utils::saveFile(
@@ -26,7 +26,8 @@ class EndothelialCount {
                                 idTestype: $this->idTestType,
                                 idTestRecord: $this->id,
                                 creationDate: $this->creationDate,
-                                testName: $this->getTestName() . ' OD'
+                                testName: $this->getTestName() . ' OD',
+                                fileTypeName: $this->getTestName(),
                         ) || $saved;
             }
 
@@ -37,7 +38,8 @@ class EndothelialCount {
                                 idTestype: $this->idTestType,
                                 idTestRecord: $this->id,
                                 creationDate: $this->creationDate,
-                                testName: $this->getTestName() . ' OS'
+                                testName: $this->getTestName() . ' OS',
+                                fileTypeName: $this->getTestName(),
                         ) || $saved;
             }
 
