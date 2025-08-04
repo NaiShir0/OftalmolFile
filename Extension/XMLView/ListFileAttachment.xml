@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view>
     <columns>
-        <column name="reasonName" order="100" level="99"> 
-            <widget type="text" fieldname="reasonName" />
-        </column>
-        <column name="testType" order="100" level="99"> 
+        <column name="testType" order="100" level="99" title = "file-test-name"> 
             <widget type="text" fieldname="testType" />
         </column>
     </columns>
