@@ -29,7 +29,7 @@ class Utils {
         return $path . '?myft=' . MyFilesToken::get($path, true);
     }
 
-    public static function saveFile($filePath, $idExpedient, $idTestype, $idTestRecord, $creationDate, $testName) {
+    public static function saveFile($filePath, $idExpedient, $idTestype, $idTestRecord, $creationDate, $testName, $fileTypeName) {
 
         $file = new Model\FileAttachment();
 
@@ -47,6 +47,7 @@ class Utils {
         $file->idExpedient = $idExpedient;
         $file->idPatient = $patient->idPatient;
         $file->idTestType = $idTestype;
+        $file->fileTypeName = $fileTypeName;
         $file->idTestRecord = $idTestRecord;
 
         return $file->save();
