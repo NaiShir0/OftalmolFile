@@ -11,7 +11,7 @@
 
 namespace FacturaScripts\Plugins\OftalmolFile;
 
-use FacturaScripts\Core\Base\InitClass;
+use FacturaScripts\Core\Template\InitClass;
 
 class Init extends InitClass {
 
