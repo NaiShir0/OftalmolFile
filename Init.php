@@ -32,10 +32,11 @@ class Init extends InitClass {
 
     #[\Override]
     public function update(): void {
-        
+        $this->loadModelExtensions();
     }
 
     private function loadModelExtensions() {
+        $this->loadExtension(new Extension\Model\SchirmerTest());
         $this->loadExtension(new Extension\Model\OCTMacule());
         $this->loadExtension(new Extension\Model\OCTPapille());
         $this->loadExtension(new Extension\Model\Angiography());
