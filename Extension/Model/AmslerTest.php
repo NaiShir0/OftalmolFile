@@ -15,7 +15,7 @@ use FacturaScripts\Plugins\OftalmolFile\src;
 use FacturaScripts\Dinamic\Model;
 use Closure;
 
-class BaseTest {
+class AmslerTest {
 
  public function save(): Closure {
         return function () {
@@ -28,7 +28,7 @@ class BaseTest {
                                 idTestype: $this->idTestType,
                                 idTestRecord: $this->id,
                                 creationDate: $this->creationDate,
-                                testName: $this->getTestName() . ' OD',
+                                testName: $this->getTestName() . ' SC',
                                 fileTypeName: $this->getTestName(),
                         ) || $saved;
             }
@@ -40,7 +40,7 @@ class BaseTest {
                                 idTestype: $this->idTestType,
                                 idTestRecord: $this->id,
                                 creationDate: $this->creationDate,
-                                testName: $this->getTestName() . ' OS',
+                                testName: $this->getTestName() . ' CC',
                                 fileTypeName: $this->getTestName(),
                         ) || $saved;
             }

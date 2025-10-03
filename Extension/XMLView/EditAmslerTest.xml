@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is part of Oftalmologia plugin for FacturaScripts.
+    FacturaScripts  Copyright (C) 2015-2025 Carlos Garcia Gomez <carlos@facturascripts.com>
+    Oftalmologia    Copyright (C) 2024-2025 Clinica Castillo <info@clinicastillo.es>
+                    Copyright (C) 2024-2025 Javier Navarro García <jnavgar69@gmail.com>
+    This program and its files are under the terms of the license specified in the LICENSE file.
+-->
+<view>
+    <columns>
+        <!-- Grupo de encabezado, columnas ocultas -->
+        <group name="dates" >
+            <column name="filesattached" order="160" numcolumns="12" title ="file-list">
+                <widget type="filesAttached" fieldname="fileAtatched"/>
+            </column>     
+        </group>
+        <group name="withoutCompensation">
+            <column name="ODfile" order="400" numcolumns="12" title="without-compensation-file">
+                <widget type="file" fieldname="ODfile"/>
+            </column>
+        </group>
+        <group name="withCompensation">  
+            <column name="OSfile" order="410" numcolumns="12" title="with-compensation-file">
+                <widget type="file" fieldname="OSfile"/>
+            </column>  
+        </group>
+    </columns>
+</view>
