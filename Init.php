@@ -36,14 +36,44 @@ class Init extends InitClass {
     }
 
     private function loadModelExtensions() {
-        $this->loadExtension(new Extension\Model\SchirmerTest());
+        $this->loadExtension(new Extension\Model\AmslerTest());
+        $this->loadExtension(new Extension\Model\Angiography());
+        $this->loadExtension(new Extension\Model\Autorefractometer());
+        $this->loadExtension(new Extension\Model\Bielschoswsky());
+        $this->loadExtension(new Extension\Model\Biometry());
+        $this->loadExtension(new Extension\Model\Biomicroscopy());
+        $this->loadExtension(new Extension\Model\Campimetry());
+        $this->loadExtension(new Extension\Model\CoverTest());
+        $this->loadExtension(new Extension\Model\EndothelialCount());
+        $this->loadExtension(new Extension\Model\Exophthalmometry());
+        $this->loadExtension(new Extension\Model\EyeFundus());
+        $this->loadExtension(new Extension\Model\EyelidFunction());
+        $this->loadExtension(new Extension\Model\FlyTest());
+        $this->loadExtension(new Extension\Model\FrisbyTest());
+        $this->loadExtension(new Extension\Model\Frontofocometer());
+        $this->loadExtension(new Extension\Model\Gonioscopy());
+        $this->loadExtension(new Extension\Model\IshiharaTest());
+        $this->loadExtension(new Extension\Model\JonesTest());
+        $this->loadExtension(new Extension\Model\Keratometry());
         $this->loadExtension(new Extension\Model\OCTMacule());
         $this->loadExtension(new Extension\Model\OCTPapille());
-        $this->loadExtension(new Extension\Model\Angiography());
-        $this->loadExtension(new Extension\Model\Campimetry());
-        $this->loadExtension(new Extension\Model\Topography());
-        $this->loadExtension(new Extension\Model\EndothelialCount());
-        $this->loadExtension(new Extension\Model\Biometry());
+        $this->loadExtension(new Extension\Model\OcularMotility());
+        $this->loadExtension(new Extension\Model\Pachymetry());
+        $this->loadExtension(new Extension\Model\PointOfConvergence());
+        $this->loadExtension(new Extension\Model\RandotTest());
         $this->loadExtension(new Extension\Model\Retinography());
+        $this->loadExtension(new Extension\Model\SchirmerTest());
+        $this->loadExtension(new Extension\Model\Shiascopy());
+        $this->loadExtension(new Extension\Model\SmileTest());
+        $this->loadExtension(new Extension\Model\StereopsisFar());
+        $this->loadExtension(new Extension\Model\SubjetiveRefraction());
+        $this->loadExtension(new Extension\Model\TearDuctProbing());
+        $this->loadExtension(new Extension\Model\TitmusTest());
+        $this->loadExtension(new Extension\Model\TnoTest());
+        $this->loadExtension(new Extension\Model\Tonometry());
+        $this->loadExtension(new Extension\Model\TonometryBraley());
+        $this->loadExtension(new Extension\Model\Topography());
+        $this->loadExtension(new Extension\Model\VisualAcuity());
+        $this->loadExtension(new Extension\Model\WorthLight());
     }
 }

@@ -14,10 +14,13 @@
                 <widget type="filesAttached" fieldname="fileAtatched"/>
             </column>     
         </group>
-        <group name="Test Fields">
+        
+        <group name="farVision">
             <column name="ODfile" order="400" numcolumns="6" title="right-eye-file">
                 <widget type="file" fieldname="ODfile"/>
-            </column>  
+            </column>
+        </group>  
+        <group name="closeVision">
             <column name="OSfile" order="410" numcolumns="6" title="left-eye-file">
                 <widget type="file" fieldname="OSfile"/>
             </column>  
