@@ -71,7 +71,7 @@ class WidgetFilesAttached extends WidgetText
         return '<div class="form-group mb-2">'
             . '<input type="hidden" id="' . $this->id . '" name="' . $this->fieldname . '" value="' . $this->value . '">'
             . $labelHtml
-            . '<a href="#" class="btn btn-block btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal_' . $this->id . '">'
+            . '<a href="#" class="btn btn-block btn-outline-secondary" data-toggle="modal" data-target="#modal_' . $this->id . '">'
             . '<i class="' . $icon . ' fa-fw"></i> '
             . '<span id="modal_span_' . $this->id . '">' . $fileName . '</span>'
             . '</a>'
