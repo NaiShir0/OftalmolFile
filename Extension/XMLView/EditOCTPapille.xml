@@ -15,11 +15,11 @@
             </column>     
         </group>
         <group name="Test Fields">
-            <column name="file" order="400" numcolumns="6" title="right-eye-file">
-                <widget type="file" fieldname="file"/>
+            <column name="ODfile" order="400" numcolumns="6" title="right-eye-file">
+                <widget type="file" fieldname="ODfile"/>
             </column>  
-            <column name="file2" order="410" numcolumns="6" title="left-eye-file">
-                <widget type="file" fieldname="file2"/>
+            <column name="OSfile" order="410" numcolumns="6" title="left-eye-file">
+                <widget type="file" fieldname="OSfile"/>
             </column>  
         </group>
     </columns>

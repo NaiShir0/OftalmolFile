@@ -17,10 +17,9 @@ use Closure;
 
 class Topography {
 
-     public function save(): Closure {
+    public function save(): Closure {
         return function () {
             $saved = true;
-
             if (!empty($this->ODfile)) {
                 $saved = src\Utils::saveFile(
                                 filePath: $this->ODfile,
