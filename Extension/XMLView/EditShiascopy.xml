@@ -14,11 +14,13 @@
                 <widget type="filesAttached" fieldname="fileAtatched"/>
             </column>     
         </group>
-        <group name="Test Fields">
-            <column name="ODfile" order="400" numcolumns="6" title="right-eye-file">
+        <group name="withoutCycle">
+            <column name="ODfile" order="400" numcolumns="12" title="without-cycle-file">
                 <widget type="file" fieldname="ODfile"/>
-            </column>  
-            <column name="OSfile" order="410" numcolumns="6" title="left-eye-file">
+            </column>
+        </group>
+        <group name="withCycle">  
+            <column name="OSfile" order="410" numcolumns="12" title="with-cycle-file">
                 <widget type="file" fieldname="OSfile"/>
             </column>  
         </group>

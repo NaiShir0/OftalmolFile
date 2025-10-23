@@ -12,6 +12,7 @@
 namespace FacturaScripts\Plugins\OftalmolFile\Extension\Model;
 
 use Closure;
+use FacturaScripts\Plugins\OftalmolFile\src;
 
 class Campimetry {
 

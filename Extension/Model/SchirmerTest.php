@@ -15,11 +15,12 @@ use FacturaScripts\Plugins\OftalmolFile\src;
 use FacturaScripts\Dinamic\Model;
 use Closure;
 
-class Topography {
+class SchirmerTest {
 
-    public function save(): Closure {
+ public function save(): Closure {
         return function () {
             $saved = true;
+
             if (!empty($this->ODfile)) {
                 $saved = src\Utils::saveFile(
                                 filePath: $this->ODfile,

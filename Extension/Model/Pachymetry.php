@@ -15,11 +15,12 @@ use FacturaScripts\Plugins\OftalmolFile\src;
 use FacturaScripts\Dinamic\Model;
 use Closure;
 
-class Topography {
+class Pachymetry {
 
-    public function save(): Closure {
+ public function save(): Closure {
         return function () {
             $saved = true;
+
             if (!empty($this->ODfile)) {
                 $saved = src\Utils::saveFile(
                                 filePath: $this->ODfile,
@@ -27,7 +28,7 @@ class Topography {
                                 idTestype: $this->idTestType,
                                 idTestRecord: $this->id,
                                 creationDate: $this->creationDate,
-                                testName: $this->getTestName() . ' OD',
+                                testName: $this->getTestName() . ' SC',
                                 fileTypeName: $this->getTestName(),
                         ) || $saved;
             }
@@ -39,7 +40,7 @@ class Topography {
                                 idTestype: $this->idTestType,
                                 idTestRecord: $this->id,
                                 creationDate: $this->creationDate,
-                                testName: $this->getTestName() . ' OS',
+                                testName: $this->getTestName() . ' CC',
                                 fileTypeName: $this->getTestName(),
                         ) || $saved;
             }
