@@ -32,7 +32,7 @@ class Init extends InitClass {
 
     #[\Override]
     public function update(): void {
-        $this->loadModelExtensions();
+        //$this->loadModelExtensions();
     }
 
     private function loadModelExtensions() {
