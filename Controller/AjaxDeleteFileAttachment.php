@@ -12,8 +12,8 @@
 namespace FacturaScripts\Plugins\OftalmolFile\Controller;
 
 use FacturaScripts\Core\Base\Controller;
-use FacturaScripts\Plugins\Oftalmol\Model\FileAttachment;
-use FacturaScripts\Plugins\Oftalmol\Model\FileAttachmentLink;
+use FacturaScripts\Dinamic\Model\FileAttachment;
+use FacturaScripts\Dinamic\Model\FileAttachmentLink;
 
 class AjaxDeleteFileAttachment extends Controller {
 

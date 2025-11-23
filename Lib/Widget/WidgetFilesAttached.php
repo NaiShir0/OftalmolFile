@@ -5,8 +5,8 @@ namespace FacturaScripts\Plugins\OftalmolFile\Lib\Widget;
 use FacturaScripts\Core\Lib\Widget\WidgetText;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use FacturaScripts\Core\Tools;
-use FacturaScripts\Plugins\Oftalmol\Model\FileAttachment;
-use FacturaScripts\Plugins\Oftalmol\Model\FileAttachmentLink;
+use FacturaScripts\Dinamic\Model\FileAttachment;
+use FacturaScripts\Dinamic\Model\FileAttachmentLink;
 use FacturaScripts\Plugins\Oftalmol\src\Utils;
 use FacturaScripts\Core\Lib\AssetManager;
 
