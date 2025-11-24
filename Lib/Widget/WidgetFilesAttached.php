@@ -7,7 +7,7 @@ use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use FacturaScripts\Core\Tools;
 use FacturaScripts\Dinamic\Model\FileAttachment;
 use FacturaScripts\Dinamic\Model\FileAttachmentLink;
-use FacturaScripts\Plugins\Oftalmol\src\Utils;
+use FacturaScripts\Plugins\OftalmolFile\src\Utils;
 use FacturaScripts\Core\Lib\AssetManager;
 
 class WidgetFilesAttached extends WidgetText
@@ -51,7 +51,7 @@ class WidgetFilesAttached extends WidgetText
         $fileAttachment = new FileAttachment();
         $fileName = Tools::lang()->trans('attachedFiles');
 
-        if ($this->value && $fileAttachment->loadFromCode($this->value)) {
+        if ($this->value && $fileAttachment->load($this->value)) {
             $fileName = $fileAttachment->fileName;
         }
 

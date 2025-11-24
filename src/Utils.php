@@ -46,6 +46,7 @@ class Utils {
         // PASAMOS LOS DATOS AL MODELO para que se cree el link automáticamente
         $file->idExpedient = $idExpedient;
         $file->idPatient = $patient->idPatient;
+        $file->idSpeciality = $expedient->idSpeciality;
         $file->idTestType = $idTestype;
         $file->fileTypeName = $fileTypeName;
         $file->idTestRecord = $idTestRecord;
