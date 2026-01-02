@@ -11,6 +11,7 @@
 
 namespace FacturaScripts\Plugins\OftalmolFile\Extension\Model;
 
+use FacturaScripts\Plugins\OftalmolFile\src;
 use Closure;
 
 class EndothelialCount {

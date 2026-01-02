@@ -27,6 +27,10 @@ class EditPatient {
             $this->views[$viewName]->disableColumn('patientName', true);
             $this->views[$viewName]->disableColumn('phoneNumber', false);
             $this->views[$viewName]->disableColumn('birthDate', true);
+            
+            $this->setSettings($viewName, 'btnDelete', false);
+            $this->setSettings($viewName, 'btnNew', false);
+
         };
     }
 

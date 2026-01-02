@@ -30,7 +30,7 @@ class ListFileAttachment extends ListController {
     #[\Override]
     public function getPageData(): array {
         $data = parent::getPageData();
-        $data['menu'] = 'ophthalmologyAdmin';
+        $data['menu'] = 'oftalmol-admin';
         $data['title'] = 'ophthalmol-file-list';
         $data['icon'] = 'fa-solid fa-file';
         return $data;
