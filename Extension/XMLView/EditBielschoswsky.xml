@@ -14,7 +14,7 @@
                 <widget type="filesAttached" fieldname="fileAtatched"/>
             </column>     
         </group>
-        <group name="Test Fields">
+        <group name="TestFields">
             <column name="ODfile" order="400" numcolumns="6" title="without-compensation-file">
                 <widget type="file" fieldname="ODfile"/>
             </column> 
