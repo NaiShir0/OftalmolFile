@@ -56,9 +56,9 @@ class WidgetFilesAttached extends WidgetText {
         // si es solo lectura
         if ($this->readonly()) {
             // Pintar valor en pantalla
-            echo '<div style="background:#ffc; color:#000; padding:4px; border:1px solid #aaa; margin:2px 0;">';
+            /*echo '<div style="background:#ffc; color:#000; padding:4px; border:1px solid #aaa; margin:2px 0;">';
             echo 'DEBUG readonly(): $this->value = ' . htmlspecialchars(var_export($this->idTestRecord, true));
-            echo '</div>';
+            echo '</div>';*/
          return '<div class="form-group mb-2">'
             . $labelHtml
             . '<button type="button" class="btn btn-block btn-outline-secondary" disabled>'
