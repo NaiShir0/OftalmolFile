@@ -11,7 +11,7 @@
         <!-- Grupo de encabezado, columnas ocultas -->
         <group name="dates" >
             <column name="filesattached" order="160" numcolumns="12" title ="file-list">
-                <widget type="filesAttached" fieldname="fileAtatched"/>
+                <widget type="filesAttached" fieldname="fileAtatched" readonly="dinamic"/>
             </column>     
         </group>
         <group name="SC">
