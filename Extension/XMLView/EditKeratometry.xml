@@ -15,12 +15,12 @@
             </column>     
         </group>
         <group name="ODeye">
-            <column name="ODfile" order="400" numcolumns="12" title="right-eye-file">
+            <column name="ODfile" order="1000" numcolumns="12" title="right-eye-file">
                 <widget type="file" fieldname="ODfile"/>
             </column>
         </group>
         <group name="OSeye">  
-            <column name="OSfile" order="410" numcolumns="12" title="left-eye-file">
+            <column name="OSfile" order="1010" numcolumns="12" title="left-eye-file">
                 <widget type="file" fieldname="OSfile"/>
             </column>  
         </group>
