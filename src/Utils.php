@@ -11,7 +11,7 @@
 
 namespace FacturaScripts\Plugins\OftalmolFile\src;
 
-use FacturaScripts\Core\Base\MyFilesToken;
+use FacturaScripts\Dinamic\Lib\MyFilesToken;
 use FacturaScripts\Dinamic\Model;
 
 /**
@@ -50,7 +50,6 @@ class Utils {
         $file->idTestType = $idTestype;
         $file->fileTypeName = $fileTypeName;
         $file->idTestRecord = $idTestRecord;
-
         return $file->save();
     }
 
