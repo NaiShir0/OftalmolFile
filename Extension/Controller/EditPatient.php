@@ -13,6 +13,8 @@ namespace FacturaScripts\Plugins\OftalmolFile\Extension\Controller;
 
 use FacturaScripts\Plugins\OftalmolFile\src\Constants;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
+use FacturaScripts\Core\Session;
+use FacturaScripts\Dinamic\Model;
 use Closure;
 
 class EditPatient {
@@ -27,10 +29,16 @@ class EditPatient {
             $this->views[$viewName]->disableColumn('patientName', true);
             $this->views[$viewName]->disableColumn('phoneNumber', false);
             $this->views[$viewName]->disableColumn('birthDate', true);
-            
+
             $this->setSettings($viewName, 'btnDelete', false);
             $this->setSettings($viewName, 'btnNew', false);
-
+            $this->addButton($viewName, [
+                'action' => 'newFileModal',
+                'color' => 'success',
+                'icon' => 'fa-solid fa-plus',
+                'label' => 'Nuevo fichero',
+                'type' => 'modal'
+            ]);
         };
     }
 
@@ -48,6 +56,56 @@ class EditPatient {
                     parent::loadData($viewName, $view);
                     break;
             }
+        };
+    }
+
+    public function execPreviousAction(): Closure {
+        return function ($action) {
+
+            if ($action === 'newFileModal') {
+
+                $file = new Model\FileAttachment();
+
+                $uploadedFile = $this->request->files->get('filePathModal');
+                if ($uploadedFile && $uploadedFile->isValid()) {
+
+                    $fileName = uniqid() . '_' . $uploadedFile->getClientOriginalName();
+                    $file->fileType = $uploadedFile->getMimeType();
+                    $uploadedFile->move(FS_FOLDER . '/MyFiles', $fileName);
+
+                    $file->filePath = $fileName; // 👈 SOLO nombre, sin MyFiles/
+                    $file->fileName = $fileName;
+                }
+
+                $file->fileTypeCode = $this->request->get('fileTypeCodeModal');
+                $file->generalNote = $this->request->get('generalNoteModal');
+                $file->nick = \FacturaScripts\Core\Session::user()->nick;
+                $file->uploadDate = date('Y-m-d H:i:s');
+
+                if ($file->save()) {
+
+                    $fileLink = new Model\FileAttachmentLink();
+
+                    $userSpecialist = new Model\Specialist();
+                    $userSpecialist->load(\FacturaScripts\Core\Session::user()->idSpecialist);
+                    $mainViewName = $this->getMainViewName();
+                    $fileLink->idFile = $file->id;
+                    $fileLink->idSpeciality = $userSpecialist->idSpeciality;
+                    $idExpedient = $this->request->get('idExpedientModal');
+                    $idPatient = $this->request->get('code');
+                    $fileType = $this->request->get('fileTypeCodeModal');
+
+                    $fileLink->idExpedient = !empty($idExpedient) ? $idExpedient : null;
+                    $fileLink->idPatient = !empty($idPatient) ? $idPatient : null;
+                    $fileLink->idFileType = !empty($fileType) ? $fileType : null;
+
+                    $fileLink->save();
+                }
+
+                return true;
+            }
+
+            return parent::execPreviousAction($action);
         };
     }
 }
