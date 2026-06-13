@@ -12,6 +12,7 @@
 namespace FacturaScripts\Plugins\OftalmolFile;
 
 use FacturaScripts\Core\Template\InitClass;
+use FacturaScripts\Plugins\OftalmolFile\Lib\TimelineProviders\AttachmentsProvider;
 
 class Init extends InitClass {
 
@@ -23,6 +24,20 @@ class Init extends InitClass {
         $this->loadExtension(new Extension\Controller\EditFileAttachment());
 
         $this->loadModelExtensions();
+        $this->registerTimelineProvider();
+    }
+
+    /**
+     * Registers the attachments provider on the central timeline
+     * registry exposed by OftalmolBase.
+     */
+    private function registerTimelineProvider(): void {
+        if (!class_exists('FacturaScripts\\Plugins\\OftalmolBase\\Lib\\TimelineProviderRegistry')) {
+            return;
+        }
+        \FacturaScripts\Plugins\OftalmolBase\Lib\TimelineProviderRegistry::register(
+            new AttachmentsProvider()
+        );
     }
 
     #[\Override]
