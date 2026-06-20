@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is part of Oftalmologia plugin for FacturaScripts.
+    FacturaScripts  Copyright (C) 2015-2025 Carlos Garcia Gomez <carlos@facturascripts.com>
+    Oftalmologia    Copyright (C) 2024-2025 Clinica Castillo <info@clinicastillo.es>
+                    Copyright (C) 2024-2025 Javier Navarro García <jnavgar69@gmail.com>
+    This program and its files are under the terms of the license specified in the LICENSE file.
+-->
+<view>
+    <columns>
+        <column name="id" order="100" level="99" numcolumns="1" >
+            <widget type="text" fieldname="id" readonly="true"/>
+        </column>
+        <column name="idSpeciality" order="110" level="99" numcolumns="1">
+            <widget type="text" fieldname="idSpeciality" readonly="true"/>
+        </column>
+        <column name="nick" order="140" numcolumns="1" level="99">
+            <widget type="text" fieldname="nick" readonly="true"/>
+        </column>
+        <column name="creationDate" order="140" numcolumns="2">
+            <widget type="datetime" fieldname="creationDate" readonly="true"/>
+        </column>
+
+        <column name="typeName" order="230" numcolumns="4" title= "type-file-name">
+            <widget type="text" fieldname="typeName" rows="1"/>
+        </column>
+        <column name="generalNote" order="240" numcolumns="4">
+            <widget type="text" fieldname="generalNote" rows="1"/>
+        </column>
+        <column name="profesionalNote" order="250" numcolumns="4">
+            <widget type="text" fieldname="profesionalNote" rows="1"/>
+        </column>
+    </columns>
+</view>
